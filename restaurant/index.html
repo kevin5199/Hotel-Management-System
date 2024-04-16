@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Restaurant</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/style-restaurant.css">
+  <link rel="shortcut icon" href="/public/favicon.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+  .dropdown {
+    position: relative;
+    display: inline-block;
+
+  }
+
+  .dropbtn {
+    border-radius: 6px;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 1;
+  }
+
+  .dropdown-content label {
+    display: block;
+    color: black;
+    margin-bottom: 5px;
+  }
+
+  .dropdown-content label input[type="checkbox"] {
+    margin-right: 5px;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+</style>
+
+<body>
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid relative top-50 left-50">
+      <a class="navbar-brand" href="../index.html">Hotel The Grand Khodiyar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex gap-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/reservations/index.html">Reservations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/restaurant/index.html">Restaurant</a>
+          </li>
+        </ul>
+        <div class="d-flex">
+          <a class="btn" href="../admin/ad-index.html">Admin</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <!--Restaurant-->
+  <div id="restaurant-form-container"
+    class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-5 mt-5 mb-3">
+    <div id="restaurant-form-text">
+      <h2>Hotel The Grand Khodiyar</h2>
+      <p>Hotel The Grand Khodiyar is a luxurious hotel located in Visnagar, known for its exquisite amenities. The Hotel
+        offers an array of facilities, including Room services, fine dining restaurants, and exclusive lounges, ensuring
+        an unforgettable experience for its guests.</p>
+    </div>
+    <div id="restaurant-form">
+      <form id="orderForm">
+        <div class="mb-3">
+          <label for="name" class="form-label">Full Name</label>
+          <input type="text" name="name" id="name" class="form-control" placeholder="Your Full Name">
+        </div>
+        <div id="hidden1">Please Enter a valid name</div>
+        <label for="mainCourse" class="form-label">Main Course</label>
+        <div class="mb-3 MainManu">
+          <div class="dropdown ">
+            <button class="dropbtn form-control">Vegetable <i class="fa-solid fa-caret-down"></i></button>
+            <div class="dropdown-content">
+              <label><input type="checkbox" name="item1" value="veg.kolhapuri">veg.kolhapuri </label>
+              <label><input type="checkbox" name="item2" value="veg.handi">veg.handi</label>
+              <label><input type="checkbox" name="item3" value="veg.kadai">veg.kadai</label>
+              <label><input type="checkbox" name="item3" value="veg.jaipuri">veg.jaipuri</label>
+              <label><input type="checkbox" name="item3" value="veg.makkhanvala">veg.makkhanvala</label>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn form-control ">Paneer <i class="fa-solid fa-caret-down"></i></button>
+            <div class="dropdown-content">
+              <label><input type="checkbox" name="item1" value="paneer Bhuraji">paneer Bhuraji</label>
+              <label><input type="checkbox" name="item2" value="paneer Butter masala">paneer Butter masala</label>
+              <label><input type="checkbox" name="item3" value="paneer Cheese masala">paneer Cheese masala</label>
+              <label><input type="checkbox" name="item3" value="paneer palak">paneer palak</label>
+              <label><input type="checkbox" name="item3" value="paneer Tikka masala">paneer Tikka masala</label>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn form-control">Roti <i class="fa-solid fa-caret-down"></i></button>
+            <div class="dropdown-content">
+              <label><input type="checkbox" name="item1" value="Roti">Roti</label>
+              <label><input type="checkbox" name="item2" value="Tandorori Roti">Tandorori Roti</label>
+              <label><input type="checkbox" name="item3" value="Tandorori Butter Roti">Tandorori Butter Roti</label>
+              <label><input type="checkbox" name="item3" value="Plain naan">Plain naan</label>
+              <label><input type="checkbox" name="item3" value="Butter naan">Butter naan</label>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn form-control">Rice <i class="fa-solid fa-caret-down"></i></button>
+            <div class="dropdown-content">
+              <label><input type="checkbox" name="item1" id="kp" value="Plain Rice">Plain Rice</label>
+              <label><input type="checkbox" name="item2" id="kp" value="jeera Rice">jeera Rice</label>
+              <label><input type="checkbox" name="item2" id="kp" value="Fry Rice">Fry Rice</label>
+            </div>
+          </div>
+          <div class="dropdown">
+
+            <button class="dropbtn form-control">Dal <i class="fa-solid fa-caret-down"></i></button>
+
+            <div class="dropdown-content">
+              <label><input type="checkbox" name="item1" value="Dal">Dal</label>
+              <label><input type="checkbox" name="item2" value="Dal fry">Dal fry</label>
+              <label><input type="checkbox" name="item2" value="Dal Tadaka">Dal Tadaka</label>
+            </div>
+          </div>
+
+        </div>
+        <div class="startup">
+          <div class="startup1 startupdd">
+            <label for="mainCourse" class="form-label">Starter</label>
+
+            <div class="mb-3">
+              <div class="dropdown">
+                <button class="dropbtn form-control">Choose... <i class="fa-solid fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                  <label><input type="checkbox" name="item1" value="veg.Hot and Sour soup">veg.Hot and Sour soup
+                  </label>
+                  <label><input type="checkbox" name="item2" value="Cream Of Tomato Soup">Cream Of Tomato Soup</label>
+                  <label><input type="checkbox" name="item3" value="veg.Manchow soup">veg.Manchow soup</label>
+                  <label><input type="checkbox" name="item3" value="veg.Manchurian Dry">veg.Manchurian Dry</label>
+                  <label><input type="checkbox" name="item3" value="veg.Hakka Noodles">veg.Hakka Noodles</label>
+                  <label><input type="checkbox" name="item3" value="soybean chilli Dry">soybean chilli Dry</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="startup2 startupdd">
+            <label for="mainCourse" class="form-label">Drinks</label>
+            <div class="mb-3">
+              <div class="dropdown">
+                <button class="dropbtn form-control">Choose... <i class="fa-solid fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                  <label><input type="checkbox" name="item1" value="Butter Milk">Butter Milk </label>
+                  <label><input type="checkbox" name="item2" value="Mirinda">Mirinda</label>
+                  <label><input type="checkbox" name="item3" value="Coca Cola">Coca Cola</label>
+                  <label><input type="checkbox" name="item3" value="Slice">Slice</label>
+                  <label><input type="checkbox" name="item3" value="Sprite">Sprite</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="startup3">
+            <button class="dropbtn" id="add">Add</button>
+          </div>
+        </div>
+
+        <div>
+          <p>Total:&#8377; <span id="total"></span></p>
+        </div>
+        <div>
+          <button type="submit" class="btn-order" id="placeorder">Place Order</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="line"></div>
+
+  <div id="gallery">
+    <h2>Gallery</h2>
+    <div class="grid-container">
+      <img src="/public/img-restaurant/gallery-1.jpg" alt="">
+      <img src="/public/img-restaurant/gallery-2.jpg" alt="">
+      <img src="/public/img-restaurant/gallery-3.jpg" alt="">
+      <img src="/public/img-restaurant/gallery-4.jpg" alt="">
+      <img src="/public/img-restaurant/gallery-5.jpg" alt="">
+      <img src="/public/img-restaurant/gallery-6.jpg" alt="">
+      <img src="/public/img-restaurant/gallery-7.jpg" alt="">
+      <img src="/public/img-restaurant/img-bg.jpg" alt="">
+    </div>
+  </div>
+
+
+
+
+  <footer>
+    <div id="footer-information"
+      class="d-flex flex-column flex-lg-row justify-content-around align-items-center px-2 py-4">
+      <div id="footer-company">
+        <h6>Hotel The Grand Khodiyar</h6>
+        <p>Hotel The Grand Khodiyar is a luxurious hotel located in Visnagar, known for its exquisite amenities. The
+          Hotel offers an array of facilities, including Room services, fine dining restaurants, and exclusive lounges,
+          ensuring an unforgettable experience for its guests.</p>
+      </div>
+      <div id="footer-services">
+        <h6>Services</h6>
+        <p><a href="/index.html">Home</a></p>
+        <p><a href="/restaurant/index.html">Restaurants</a></p>
+        <p><a href="/reservations/index.html">Reservations</a></p>
+      </div>
+      <div id="footer-contact">
+        <h6>Contact</h6>
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-house-door-fill" viewBox="0 0 16 16">
+            <path
+              d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z" />
+          </svg>
+          Near 9 Mart,Opp.Khodiyar Mata Mandir,Visnagar-384315
+        </p>
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill"
+            viewBox="0 0 16 16">
+            <path
+              d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
+          </svg>
+          hotelthegrandkhodiyar@gmail.com
+        </p>
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-telephone-inbound-fill" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM15.854.146a.5.5 0 0 1 0 .708L11.707 5H14.5a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 1 0v2.793L15.146.146a.5.5 0 0 1 .708 0z" />
+          </svg>
+          +91 9512201230
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script src="restaurant.js"></script>
+  <script type="module" src="resdata.js"></script>
+</body>
+</html>
